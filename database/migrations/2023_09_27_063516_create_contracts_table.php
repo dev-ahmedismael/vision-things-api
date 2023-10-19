@@ -34,7 +34,7 @@ return new class extends Migration
             $table->string('camera_type');
             $table->string('contract_date');
             $table->string('expiry_date');
-            $table->string('contract_number');
+            $table->string('contract_number')->unique();
             $table->string('paid_amount')->nullable();
             $table->string('discount')->nullable();
             

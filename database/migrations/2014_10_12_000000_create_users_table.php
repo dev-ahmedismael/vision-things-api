@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('manage_promocodes')->nullable();
             $table->string('manage_members')->nullable();
             $table->string('view_reports')->nullable();
+            $table->string('view_mail')->nullable();
             $table->string('profile_pic')->nullable();
             $table->timestamp('email_verified_at') ;
             $table->rememberToken();

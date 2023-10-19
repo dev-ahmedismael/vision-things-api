@@ -26,6 +26,7 @@ class User extends Authenticatable
         'manage_promocodes',
         'manage_members',
         'view_reports',
+        'view_mail',
         'profile_pic'
     ];
 

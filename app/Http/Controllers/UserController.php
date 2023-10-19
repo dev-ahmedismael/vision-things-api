@@ -39,6 +39,7 @@ class UserController extends Controller
             'manage_promocodes'=>'nullable',
             'manage_members'=>'nullable',
             'view_reports'=>'nullable',
+            'view_mail'=>'nullable'
         ]);
 
         return User::create($form_fields);
@@ -76,6 +77,7 @@ class UserController extends Controller
             'manage_promocodes'=>'nullable',
             'manage_members'=>'nullable',
             'view_reports'=>'nullable',
+            'view_mail'=>'nullable',
             'profile_pic'=>'nullable'
         ]);
          if (empty($form_fields['password'])) unset($form_fields['password']);
@@ -98,6 +100,9 @@ class UserController extends Controller
         }
         if ($request->has('view_reports') === false) {
             $form_fields['view_reports'] = null;
+        }
+        if ($request->has('view_mail') === false) {
+            $form_fields['view_mail'] = null;
         }
         if($request->hasFile('profile_pic')) {
             $file = $request->file('profile_pic')->store('images/profile_pics', 'images');

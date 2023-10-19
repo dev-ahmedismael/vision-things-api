@@ -20,7 +20,8 @@ class AuthController extends Controller
             'manage_promocodes'=>'nullable',
             'manage_members'=>'nullable',
             'view_reports'=>'nullable',
-            'profile_pic'=>'nullable'
+            'view_mail'=>'nullable',
+            'profile_pic'=>'nullable'            
         ]);
 
         if($request->has('manage_pages') == false) {
@@ -40,6 +41,9 @@ class AuthController extends Controller
         }  if($request->has('view_reports') == false) {
             $fields['view_reports'] = null;
         }
+           if($request->has('view_mail') == false) {
+            $fields['view_mail'] = null;
+        }
 
           if($request->has('profile_pic') == false) {
             $fields['profile_pic'] = null;
@@ -54,6 +58,7 @@ class AuthController extends Controller
             'manage_promocodes'=>$fields['manage_promocodes'],
             'manage_members'=>$fields['manage_members'],
             'view_reports'=>$fields['view_reports'],
+            'view_mail'=>$fields['view_mail'],
             'profile_pic'=>$fields['profile_pic'],
 
         ]);

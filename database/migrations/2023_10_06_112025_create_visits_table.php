@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('visits', function (Blueprint $table) {
             $table->id();
-            $table->string('ip');
+            $table->string('ip')->unique();
             $table->string('region');
             $table->string('city');
             $table->string('country');

@@ -37,7 +37,7 @@ class VisitsController extends Controller
      */
     public function store(Request $request)
     {
-        $ip = '45.243.131.38'; 
+        $ip = $request->ip(); 
         $user_info = Location::get($ip);
         Visits::create([
             'ip'=> $ip,

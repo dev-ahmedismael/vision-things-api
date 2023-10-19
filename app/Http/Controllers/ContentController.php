@@ -127,9 +127,11 @@ class ContentController extends Controller
             'file_25'=> 'nullable',
         ]);
 
-        if($request->hasFile('image')) {
-            $file = $request->file('image')->store('images/contents', 'images');
-            $form_fields['image'] = $file;
+        for ($i=1; $i <26 ; $i++) { 
+            if($request->hasFile('file_'.$i)) {
+            $file = $request->file('file_'.$i)->store('images/contents', 'images');
+            $form_fields['file_'.$i] = $file;
+        }
         }
 
         $content::where('id', $id)->update($form_fields);
